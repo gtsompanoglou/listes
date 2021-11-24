@@ -6,12 +6,13 @@ typedef struct node
 {
     int data;
     struct node_t* next;
-}node_t;
+}node;
 
 typedef struct list
 {
-    node_t* head;
-}list_t;
-
+    node* head;
+}list;
 
 void menu();
+
+void printList(list* l);

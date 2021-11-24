@@ -1,21 +1,41 @@
 #include "head.h"
 
-int init_list(list_t* list){
+int init_list(list* list){
     list->head=NULL;
     return 0;
 }
 
-int insert_at_head(list_t* list,int data){
-    list->head=(node_t*)malloc(sizeof(node_t));
-    list->head->data=data;
+int insert_at_head(list* list,int data){
+    node* new_node;
+    new_node=(node*)malloc(sizeof(node));
+    new_node->data=data;
+    new_node->next=NULL;
+
+    list->head=new_node;
     return 0;
 }
 
-int insert_sorted(list_t* list,int data){
-    list->head->next=(node_t*)malloc(sizeof(node_t));
-    //pos tha ekpharso ta dedomena toy next? 
+int insert_sorted(list* list,int data){
+    node* prev;
+    node* cur;
+    node* new_node;
+    prev=(node*)malloc(sizeof(node));
+    cur=(node*)malloc(sizeof(node));
+    new_node=(node*)malloc(sizeof(node));
     return 0;
 }
+
+void printList(list* l,node* start_node){
+    node* cur;
+    cur=(node*)malloc(sizeof(node));
+    while (start_node->next != NULL)
+    {
+        printf("\nData is : %d",start_node->data);
+    }
+    
+}
+
+
 
 void menu(){ 
     printf("\n1.Enter new node data");
